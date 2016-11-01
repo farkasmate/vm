@@ -15,9 +15,10 @@ RUN chown -R vagrant. /home/vagrant/
 
 ADD etc/sudoers.d/vagrant /etc/sudoers.d/vagrant
 
-ADD root/bin/start_ssh /root/bin/start_ssh
-RUN chmod 0700 /root/bin/start_ssh
+ADD sbin/mini-init /sbin/mini-init
+RUN chmod u+x /sbin/mini-init
+ADD etc/mini-init /etc/mini-init
 
 EXPOSE 22
-CMD /root/bin/start_ssh
+CMD /sbin/mini-init
 
