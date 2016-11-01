@@ -8,6 +8,8 @@ RUN apt-get -y update && apt-get install -y \
   sudo \
   vim
 
+ADD etc/environment /etc/environment
+
 RUN useradd -m -s /bin/bash vagrant
 ADD home/vagrant/.ssh/authorized_keys /home/vagrant/.ssh/authorized_keys
 RUN chmod 0700 /home/vagrant/.ssh/
