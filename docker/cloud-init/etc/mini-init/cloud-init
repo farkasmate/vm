@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cloud-init init
+cloud-init modules --mode final
+
