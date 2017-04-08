@@ -1,0 +1,21 @@
+#!/bin/bash
+
+REPO_DIR=/var/www/repo/apt
+
+if [ -d $REPO_DIR ]
+then
+  apt-ftparchive packages $REPO_DIR > $REPO_DIR/Packages
+  apt-ftparchive release  $REPO_DIR > $REPO_DIR/Release
+else
+  echo "ERROR: ${REPO_DIR} doesn't exist."
+  exit 1
+fi
+
+if [ -d ~/.gnupg/ ]
+then
+  gpg --armor --detach-sign --digest-algo SHA256 --sign --output $REPO_DIR/Release.gpg $REPO_DIR/Release
+else
+  echo "ERROR: GPG config is missing."
+  exit 1
+fi
+

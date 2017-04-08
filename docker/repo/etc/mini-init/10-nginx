@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo start-stop-daemon --verbose --start --background --exec /usr/sbin/nginx
+
