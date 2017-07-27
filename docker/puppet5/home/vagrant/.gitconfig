@@ -1,0 +1,6 @@
+[user]
+	name = Vagrant
+	email = vagrant@puppet5
+[help]
+	autocorrect = -1
+
