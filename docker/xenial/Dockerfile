@@ -12,6 +12,7 @@ ADD etc/environment /etc/environment
 
 RUN useradd -m -s /bin/bash vagrant
 ADD home/vagrant/.ssh/authorized_keys /home/vagrant/.ssh/authorized_keys
+RUN touch /home/vagrant/.ssh/known_hosts
 RUN chmod 0700 /home/vagrant/.ssh/
 RUN chown -R vagrant. /home/vagrant/
 
