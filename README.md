@@ -2,14 +2,14 @@
 
 ## Build Docker containers
 
-    cd docker/xenial/
+    cd docker/xenial/base/
     make
 
 ## Test Docker containers
 
 **NOTE**: The container will be removed after exiting the container.
 
-    cd docker/xenial/
+    cd docker/xenial/base/
     make test
 
 ## Create new Vagrant machine with Docker provider
