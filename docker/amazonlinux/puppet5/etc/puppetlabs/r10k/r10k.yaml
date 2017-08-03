@@ -1,0 +1,5 @@
+:sources:
+  :local:
+    remote: 'file:///etc/puppetlabs/code/'
+    basedir: '/etc/puppetlabs/code/environments'
+
