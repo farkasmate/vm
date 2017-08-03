@@ -1,0 +1,5 @@
+LC_ALL="C"
+LC_CTYPE="C"
+LC_MESSAGES="C"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+

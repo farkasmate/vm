@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p /var/run/sshd
+/usr/bin/ssh-keygen -A
+/usr/sbin/sshd -D -f /etc/ssh/sshd_config
+

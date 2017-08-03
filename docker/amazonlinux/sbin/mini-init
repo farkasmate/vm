@@ -1,0 +1,13 @@
+#!/bin/bash
+
+CONFDIR="/etc/mini-init"
+LOGFILE="/var/log/mini-init.log"
+
+for file in `ls $CONFDIR`
+do
+  script="$CONFDIR/$file"
+  echo "Running startup script: $script" >> $LOGFILE
+  bash -x $script &>> $LOGFILE
+  echo "Startup script [$script] finished with exit code: $?" >> $LOGFILE
+done
+
