@@ -1,5 +1,9 @@
 # Ready to use Docker containers and Vagrant templates
 
+If you need some help on how to start, read the [quickstart][] guide.
+
+[quickstart]: ./quickstart.md
+
 ## Build Docker containers
 
     cd docker/xenial/base/
