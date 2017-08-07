@@ -11,7 +11,7 @@ To install Docker and Vagrant, type the commands in a terminal emulator. The lin
 
 ### Linux
 
-Install the packages and start the services. The package names and the configuration differ a bit by distribution, but here's a few tips:
+Install the packages and start the docker service. The package names and the configuration differ a bit by distribution, but here are a few tips:
 
 - Make sure you're in the *docker* group
 - Make sure the docker service is running
@@ -80,7 +80,7 @@ Restart the docker service.
 
        make test
 
-   If everything went according to the plan you will find yourself in the container's shell with a shell like: `root@77a40185ed64:/# `
+   If everything went according to the plan you will find yourself in the container's shell with a prompt like: `root@77a40185ed64:/# `
 
    Exit the shell by typing `exit`.
 
