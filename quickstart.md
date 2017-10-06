@@ -25,14 +25,14 @@ Install the packages and start the docker service. The package names and the con
 
 #### OPTIONAL configuration
 
-My personal recommendation is not to use AuFS - the default storage driver. You can read the details [here][storage_drivers].
+My personal recommendation is not to use AuFS - the default storage driver - or devicemapper. You can read the details [here][storage_drivers].
 
-Devicemapper is a simple alternative if you're already using and comfortable with LVM.
+Use overlay2.
 
 Add the following into `/etc/docker/daemon.json`:
 
     {
-      "storage-driver": "devicemapper"
+      "storage-driver": "overlay2"
     }
 
 Restart the docker service.
