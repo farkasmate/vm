@@ -1,0 +1,32 @@
+#!/bin/bash
+
+REPO_DIR=/build/
+PERMISSIONS=0444
+
+if [ ! -d $REPO_DIR ]
+then
+  echo "ERROR: ${REPO_DIR} doesn't exist."
+  exit 1
+fi
+
+uid=`stat -c '%u' $REPO_DIR`
+gid=`stat -c '%g' $REPO_DIR`
+
+cd $REPO_DIR
+apt-ftparchive packages $REPO_DIR > Packages
+sed -i "s|^Filename: ${REPO_DIR}|Filename: |" Packages
+apt-ftparchive release  $REPO_DIR > Release
+
+chown $uid:$gid Packages Release
+chmod $PERMISSIONS Packages Release
+
+if [ ! -d ~/.gnupg/ ]
+then
+  echo "ERROR: GPG config is missing."
+  exit 1
+fi
+
+gpg --armor --detach-sign --digest-algo SHA256 --sign --no-random-seed-file --output Release.gpg Release
+chown $uid:$gid Release.gpg
+chmod $PERMISSIONS Release.gpg
+
