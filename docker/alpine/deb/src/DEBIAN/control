@@ -1,0 +1,7 @@
+Package: hello
+Version: 1.0.0
+Maintainer: Mate Farkas <mate.farkas@sch.hu>
+Architecture: all
+Description: Hello World
+ This package serves demo purposes.
+
