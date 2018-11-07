@@ -15,3 +15,9 @@ services:
       - './apt/nginx.conf:/etc/nginx/conf.d/default.conf:ro'
       - './apt/repo/:/var/www/:ro'
 
+  certbot:
+    image: 'certbot/certbot:v0.27.1'
+    volumes:
+      - './certbot/letsencrypt/:/etc/letsencrypt/:rw' # RW
+    command: 'renew --preferred-challenges=http --manual-auth-hook /etc/letsencrypt/renewal-hooks/manual/http-authenticator.sh --manual-cleanup-hook /etc/letsencrypt/renewal-hooks/manual/http-cleanup.sh'
+

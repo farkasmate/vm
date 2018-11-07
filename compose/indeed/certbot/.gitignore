@@ -1,0 +1,4 @@
+/backups/*
+/letsencrypt/*
+!.gitkeep
+!/letsencrypt/renewal-hooks/
