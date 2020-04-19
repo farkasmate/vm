@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash test links</title>
+    <style>
+      a {text-decoration: none;}
+
+      .dashlet {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 32px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .red {background-color: #f44336;}
+      .green {background-color: #4CAF50;}
+      .blue {background-color: #008CBA;}
+      .gray {background-color: #e7e7e7; color: black;}
+      .black {background-color: #555555;}
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>From https://covid19api.com/</p>
+      <p>Data is cached, updated every 30 minutes.</p>
+    </div>
+    <a href="dashlet://indeed.sch.bme.hu/web/covid19_world.json">
+      <div class="dashlet red">COVID-19 [World]</div>
+    </a>
+    <a href="dashlet://indeed.sch.bme.hu/web/covid19_hungary.json">
+      <div class="dashlet gray">COVID-19 [Hungary]</div>
+    </a>
+    <a href="dashlet://indeed.sch.bme.hu/web/covid19_uk.json">
+      <div class="dashlet green">COVID-19 [UK]</div>
+    </a>
+  </body>
+</html>
