@@ -25,6 +25,9 @@ services:
       - './certbot/letsencrypt/:/etc/letsencrypt/:rw' # RW
     command: 'renew --preferred-challenges=http --manual-auth-hook /etc/letsencrypt/renewal-hooks/manual/http-authenticator.sh --manual-cleanup-hook /etc/letsencrypt/renewal-hooks/manual/http-cleanup.sh'
 
+  time:
+    image: 'matefarkas/time-dashlet:latest'
+
   web:
     image: 'nginx:1.15.6-alpine'
     volumes:
